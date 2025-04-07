@@ -31,9 +31,7 @@ def print_rabbit():
     for line in rabbit:
         print(line)
 
-# 여기서 반복
-# for i in range(5):
-while True: # 무한 반복 (계속 참)
+def play():
     print("그림 출력 프로그램")
     print("=====================")
     print("1. 고양이")
@@ -61,4 +59,10 @@ while True: # 무한 반복 (계속 참)
     # 잘못입력하면 잘못 입력했다고 출력
     else:
         print("잘못입력")
+
+# 여기서 반복
+for i in range(5):
+    play()
+while True: # 무한 반복 (계속 참)
+    play()
 # 여기까지
