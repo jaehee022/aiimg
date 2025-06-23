@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <!-- 아이콘 보이게 수정! -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background: url('home.jpg') no-repeat center center/cover;
+      color: white;
+      overflow-x: hidden;
+      animation: slideIn 1.3s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 6s linear infinite;
+      margin-bottom: 40px;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .contact-info {
+      font-size: 18px;
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+
+    .contact-info span {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .contact-info span:hover {
+      text-decoration: underline;
+    }
+
+    .icons {
+      margin-top: 20px;
+    }
+
+    .icons a {
+      margin: 0 15px;
+      font-size: 28px;
+      color: white;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .icons a:hover {
+      transform: scale(1.2);
+      color: #fad0c4;
+    }
+
+    form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input, textarea {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .back-button a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .back-button span {
+      font-size: 24px;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .back-button:hover span {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">CONTACT</div>
+
+    <div class="contact-info">
+      <span onclick="copyToClipboard('baik0joo@naver.com')">📧 Email: baik0joo@naver.com</span>
+      <span onclick="copyToClipboard('010-6301-9365')">📞 Phone: 010-6301-9365</span>
+    </div>
+
+    <div class="icons">
+      <a href="https://instagram.com/wogldla" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://m.blog.naver.com/baik0joo" target="_blank" title="Blog"><i class="fa-solid fa-blog"></i></a>
+    </div>
+
+    <form onsubmit="event.preventDefault(); alert('메시지가 전송되었습니다!');">
+      <input type="text" placeholder="이름" required />
+      <input type="email" placeholder="이메일" required />
+      <textarea rows="5" placeholder="메시지를 입력하세요" required></textarea>
+      <button type="submit">보내기</button>
+    </form>
+
+    <div class="back-button">
+      <a href="index.html"><span>←</span></a>
+    </div>
+  </div>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`${text} 복사 완료!`);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background: url('home.jpg') no-repeat center center/cover;
+      color: white;
+      overflow-x: hidden;
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 6s linear infinite;
+      margin-bottom: 60px;
+    }
+
+    .project-section {
+      margin-bottom: 70px;
+      text-align: center;
+      padding: 30px;
+      background-color: rgba(0,0,0,0.45);
+      border-radius: 20px;
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .project-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #a1c4fd, #c2e9fb, #fad0c4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 6s linear infinite;
+    }
+
+    .floating-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      border: 3px solid white;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .icon img, .icon video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .icon:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+    }
+
+    .icon:nth-child(1) { animation: float 3.5s ease-in-out infinite alternate; }
+    .icon:nth-child(2) { animation: float 4.2s ease-in-out infinite alternate; }
+    .icon:nth-child(3) { animation: float 3.8s ease-in-out infinite alternate; }
+    .icon:nth-child(4) { animation: float 4.6s ease-in-out infinite alternate; }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-15px); }
+    }
+
+    .description {
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      position: relative;
+    }
+
+    .modal img, .modal video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: -30px;
+      right: -20px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .back-button {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .back-button a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .back-button span {
+      font-size: 24px;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .back-button:hover span {
+      transform: scale(1.2);
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">PROJECTS</div>
+
+    <!-- Stage Note -->
+    <div class="project-section">
+      <div class="project-title">1. Stage Note</div>
+      <div class="floating-icons">
+        <div class="icon" onclick="openModal('프로젝트연극1.jpeg')"><img src="프로젝트연극1.jpeg"></div>
+        <div class="icon" onclick="openModal('프로젝트연극2.jpeg.mov')"><video src="프로젝트연극2.jpeg.mov" muted autoplay loop></video></div>
+        <div class="icon" onclick="openModal('프로젝트연극3.jpeg')"><img src="프로젝트연극3.jpeg"></div>
+        <div class="icon" onclick="openModal('프로젝트연극4.jpeg')"><img src="프로젝트연극4.jpeg"></div>
+      </div>
+      <div class="description">
+        연극 무대에서 경험한 장면들을 기록하였습니다.<br>
+        무대 위 감정과 조명을 영상과 이미지로 담아보았습니다.<br>
+        앞으로 많은 무대에서의 제 모습을 보여드리겠습니다.
+      </div>
+    </div>
+
+    <!-- Daily Roast -->
+    <div class="project-section">
+      <div class="project-title">2. Daily Roast</div>
+      <div class="floating-icons">
+        <div class="icon" onclick="openModal('프로젝트커피1.jpeg.jpg')"><img src="프로젝트커피1.jpeg.jpg"></div>
+        <div class="icon" onclick="openModal('프로젝트커피2.jpg')"><img src="프로젝트커피2.jpg"></div>
+        <div class="icon" onclick="openModal('프로젝트커피3.jpg')"><img src="프로젝트커피3.jpg"></div>
+      </div>
+      <div class="description">
+        카페 아르바이트를 하며 경험한 분위기,<br>
+        손님의 흐름, 그리고 공간속 따뜻함을 이미지로 나타냅니다.<br>
+        나만의 공간, 내가 좋아하는 것에 대해 더 깊게 알아볼 수 있었던 경험이었습니다.
+      </div>
+    </div>
+
+    <!-- Palette -->
+    <div class="project-section">
+      <div class="project-title">3. Palette</div>
+      <div class="floating-icons">
+        <div class="icon" onclick="openModal('프로젝트전시1.jpeg')"><img src="프로젝트전시1.jpeg"></div>
+        <div class="icon" onclick="openModal('프로젝트전시2.jpeg.mov')"><video src="프로젝트전시2.jpeg.mov" muted autoplay loop></video></div>
+      </div>
+      <div class="description">
+        영상 콘텐츠와 전시 경험, 두 가지 스타일의 작업을 담았습니다.<br>
+        나만의 색을 담아 만든 콘텐츠입니다. 백지였던 것을 컬러로 채워넣는 경험이었습니다.<br>
+        앞으로 더 많은 컬러로 채워질 모습을 기대해주세요.
+      </div>
+    </div>
+
+    <!-- 돌아가기 버튼 -->
+    <div class="back-button">
+      <a href="index.html"><span>←</span></a>
+    </div>
+  </div>
+
+  <!-- 모달 -->
+  <div id="modal" class="modal">
+    <div class="modal-content" id="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+    </div>
+  </div>
+
+  <script>
+    function openModal(file) {
+      const modal = document.getElementById('modal');
+      const content = document.getElementById('modal-content');
+      const ext = file.split('.').pop().toLowerCase();
+
+      if (ext === 'mp4' || ext === 'mov') {
+        content.innerHTML = `<video src="${file}" controls autoplay style="max-width: 100%; max-height: 80vh;"></video><span class="close" onclick="closeModal()">×</span>`;
+      } else {
+        content.innerHTML = `<img src="${file}" style="max-width: 100%; max-height: 80vh;"><span class="close" onclick="closeModal()">×</span>`;
+      }
+
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

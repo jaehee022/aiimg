@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaehee Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    .main {
+      width: 100%;
+      height: 100vh;
+      background: url('home.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .changing-name {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 0;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+      text-align: center;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .film-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .film-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .film-image {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border: 3px solid white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .film-image:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px white;
+    }
+
+    .label {
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1 class="changing-name" id="nameText">JAE HEE</h1>
+    <div class="film-container">
+      <div class="film-block">
+        <a href="about.html">
+          <img src="About.jpg" alt="About" class="film-image" />
+        </a>
+        <div class="label">About</div>
+      </div>
+      <div class="film-block">
+        <a href="project.html">
+          <img src="Project.jpg" alt="Project" class="film-image" />
+        </a>
+        <div class="label">Project</div>
+      </div>
+      <div class="film-block">
+        <a href="contact.html">
+          <img src="Contact.jpg" alt="Contact" class="film-image" />
+        </a>
+        <div class="label">Contact</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const names = ['JAE HEE', '재희', 'ジェヒ', 'Jaéhi', '在希', 'Jaé'];
+    let index = 0;
+    const nameText = document.getElementById('nameText');
+
+    setInterval(() => {
+      index = (index + 1) % names.length;
+      nameText.textContent = names[index];
+    }, 2500);
+  </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background: url('home.jpg') no-repeat center center/cover;
+      color: white;
+      overflow-x: hidden;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 6s linear infinite;
+      margin-bottom: 40px;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .box {
+      background-color: rgba(0,0,0,0.5);
+      border: 1.5px solid white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    }
+
+    .subtitle {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #a1c4fd, #c2e9fb, #fad0c4);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 6s linear infinite;
+      text-align: center;
+    }
+
+    .profile-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .profile-section img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+
+    .name {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+      background: linear-gradient(90deg, #a1c4fd, #c2e9fb, #fad0c4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 6s linear infinite;
+    }
+
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid transparent;
+      background-image: linear-gradient(white, white), linear-gradient(90deg, #ffecd2, #fcb69f);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+
+    .icon-title {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .icon-description {
+      display: none;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .icon-container.active .icon-description {
+      display: block;
+    }
+
+    .back-button {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .back-button a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .back-button span {
+      font-size: 24px;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .back-button:hover span {
+      transform: scale(1.2);
+    }
+
+    .center-text {
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .split-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .split-section ul {
+      flex: 1;
+      padding: 0;
+      list-style: none;
+    }
+
+    .split-section li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">ABOUT ME</div>
+
+    <div class="box">
+      <div class="subtitle">INTRODUCTION</div>
+      <div class="profile-section">
+        <div style="text-align:center;">
+          <img src="프로필.jpeg" alt="프로필 사진" />
+          <div class="name">백재희</div>
+          <div>2003.08.26 출생</div>
+        </div>
+        <div>
+          안녕하세요,<br />
+          감성과 무드를 담아 감정을 표현하는 재희입니다.<br />
+          연극과 영상 속에서 다양한 인물을 경험하고,<br />
+          진심으로 소통하는 것을 좋아합니다.<br />
+          연출과 연기, 영상 속 활동을 조화롭게 담아<br />
+          나만의 포트폴리오를 완성해 나가고 있습니다.
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="subtitle">FAVORITE THINGS</div>
+
+      <div class="icon-container" onclick="toggleDescription(this)">
+        <div class="icon">
+          <img src="커피.jpg" alt="커피" style="width:100%; height:100%; object-fit:cover; border-radius: 50%;" />
+        </div>
+        <div class="icon-title">Coffee</div>
+        <div class="icon-description">
+          커피는 제 일상의 일부예요.<br />
+          향을 느끼며 여유를 즐기기도 하고,<br />
+          바쁜 하루엔 조용한 응원이 되어주기도 합니다.
+        </div>
+      </div>
+
+      <div class="icon-container" onclick="toggleDescription(this)">
+        <div class="icon">
+          <img src="연극.jpg" alt="연극" style="width:100%; height:100%; object-fit:cover; border-radius: 50%;" />
+        </div>
+        <div class="icon-title">Theater</div>
+        <div class="icon-description">
+          무대 위 장면을 보면 심장이 두근거려요.<br />
+          눈이 반짝이고, 살아있음을 느껴요.
+        </div>
+      </div>
+
+      <div class="icon-container" onclick="toggleDescription(this)">
+        <div class="icon">
+          <img src="소품.jpg" alt="소품" style="width:100%; height:100%; object-fit:cover; border-radius: 50%;" />
+        </div>
+        <div class="icon-title">Objects</div>
+        <div class="icon-description">
+          작은 소품 하나가 공간을 환하게 만들 수 있어요.<br />
+          그 안에 담긴 감성과 정성은<br />
+          제 주변을 따뜻하게 밝혀주는 빛이 돼요.
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="subtitle">FAVORITE QUOTE</div>
+      <div class="center-text">
+        <hr style="border-color:white; width: 50%; margin: 20px auto;">
+        "세상에 쉬운 것은 없다. 근데 못할 것도 없다."
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="subtitle">EDUCATION & SKILLS</div>
+      <div class="center-text">
+        <hr style="border-color:white; width: 50%; margin: 20px auto;">
+      </div>
+      <div class="split-section">
+        <ul>
+          <li><strong>Education</strong></li>
+          <li>2027.02. ~ 경성대학교 미디어콘텐츠학과 졸업 예정</li>
+        </ul>
+        <ul>
+          <li><strong>Skills</strong></li>
+          <li>Adobe Premiere</li>
+          <li>Adobe Illustrator</li>
+          <li>Adobe Photoshop</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="subtitle">FUTURE PLAN</div>
+      <div class="center-text">
+        <hr style="border-color:white; width: 50%; margin: 20px auto;">
+        저는 늘 하고 싶은 게 많은 사람입니다.<br>
+        비슷한 분야에 국한되지 않고, 다양한 영역을 배우는 걸 좋아해요.<br><br>
+        하나에 안주하지 않고,<br>
+        좋아하는 것들을 모아 나만의 방식으로 풀어내는 것.<br><br>
+        그게 제가 만들고 싶은 ‘콘텐츠’예요.<br><br>
+        제 감정과 취향, 경험이 조화롭게 어우러진<br>
+        누구도 따라할 수 없는 나만의 결과물을 만들어가고 싶습니다.
+      </div>
+    </div>
+
+    <div class="back-button">
+      <a href="index.html"><span>←</span></a>
+    </div>
+  </div>
+
+  <script>
+    function toggleDescription(container) {
+      const desc = container.querySelector('.icon-description');
+      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
